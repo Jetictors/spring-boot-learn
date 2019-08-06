@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jetictors.example.mybatisdruid.dao.cluster.ClusterDao">
+    <resultMap id="BaseResultMap" type="com.jetictors.example.mybatisdruid.model.ClusterEntity">
+        <result column="clusterId" property="clusterId" />
+        <result column="masterId" property="masterId" />
+        <result column="name" property="name" />
+        <result column="des" property="des" />
+        <result column="time" property="time" />
+    </resultMap>
+
+    <select id="getClusterByClusterId" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select * from t_cluster where clusterId = ${clusterId}
+    </select>
+
+    <select id="getClusterByMasterId" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select * from t_cluster where masterId = ${masterId}
+    </select>
+
+    <select id="getClusterList" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select * from t_cluster
+    </select>
+
+</mapper>
