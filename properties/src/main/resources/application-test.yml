@@ -1,0 +1,15 @@
+# 配置端口
+server:
+  port: 8083
+
+# 自定义属性
+explain : spring boot启动成功了，我是test分支
+
+# 配置user对象属性（请看UserProperty）
+user:
+    userId : 3
+    userName : test
+    pwd : 123456
+    nickName : test-app
+    age : 23
+    sex : 0

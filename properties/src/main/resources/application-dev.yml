@@ -1,0 +1,15 @@
+# 配置端口
+server:
+  port: 8081
+
+# 自定义属性
+explain : spring boot启动成功了，我是dev分支
+
+# 配置user对象属性（请看UserProperty）
+user:
+    userId : 1
+    userName : dev
+    pwd : 123456
+    nickName : dev-app
+    age : 21
+    sex : 0
