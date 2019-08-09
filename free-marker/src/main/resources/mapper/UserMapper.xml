@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.jetictors.example.freemarker.dao.UserDao">
+
+    <resultMap id="BaseResultMap" type="com.jetictors.example.freemarker.model.User">
+        <result column="userId" property="userId"/>
+        <result column="userName" property="userName" />
+        <result column="pwd" property="pwd" />
+        <result column="nickName" property="nickName" />
+        <result column="age" property="age" />
+        <result column="sex" property="sex" />
+    </resultMap>
+
+    <select id="getUserById" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select * from user where userId=#{userId}
+    </select>
+
+    <select id="getUserList" resultMap="BaseResultMap">
+        select * from user
+    </select>
+
+    <insert id="addUser" parameterType="com.jetictors.example.freemarker.model.User">
+        insert into user (userId, userName, pwd, nickName, age, sex)
+        value (#{userId}, #{userName}, #{pwd}, #{nickName}, #{age}, #{sex})
+    </insert>
+
+    <delete id="deleteUserById" parameterType="java.lang.String">
+        delete from user where userId=#{userId}
+    </delete>
+
+    <insert id="updateUser" parameterType="com.jetictors.example.freemarker.model.User">
+        update user set
+         user.userName=#{userName}
+         , user.pwd=#{pwd}
+         , user.nickName=#{nickName}
+         , user.age=#{age}
+         , user.sex=#{sex}
+        where user.userId=#{userId}
+    </insert>
+
+</mapper>
