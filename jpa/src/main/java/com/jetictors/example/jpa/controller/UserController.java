@@ -73,6 +73,6 @@ public class UserController {
     private <T> BaseModel<T> getBaseModel(int code, String msg, boolean status , T data){
         return new BaseModel<>(code, msg, status, data);
     }
-    
+
 }
 

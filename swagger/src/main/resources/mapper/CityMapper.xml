@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.jetictors.example.swagger.dao.CityDao">
+
+    <resultMap id="BaseResultMap" type="com.jetictors.example.swagger.model.City">
+        <result column="cityId" property="cityId"/>
+        <result column="provinceId" property="provinceId" />
+        <result column="cityName" property="cityName" />
+        <result column="description" property="description" />
+    </resultMap>
+
+    <select id="getCityByName" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select * from city where cityName=#{cityName}
+    </select>
+
+    <select id="getCityList" resultMap="BaseResultMap">
+        select * from city
+    </select>
+
+    <insert id="addCity" parameterType="com.jetictors.example.swagger.model.City">
+        insert into city (cityId, provinceId, cityName, description)
+        value (#{cityId}, #{provinceId}, #{cityName}, #{description})
+    </insert>
+
+    <delete id="deleteUserByName" parameterType="java.lang.String">
+        delete from city where cityName=#{cityName}
+    </delete>
+
+</mapper>
